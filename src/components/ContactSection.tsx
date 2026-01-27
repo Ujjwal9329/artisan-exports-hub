@@ -3,12 +3,13 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/lib/supabase";
 
 const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { toast } = useToast();
-  
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,36 +18,61 @@ const ContactSection = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Inquiry Received",
-      description: "Thank you for your interest. Our team will contact you within 24 hours.",
-    });
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      inquiry: "private-label",
-      message: "",
-    });
+
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            company: formData.company,
+            inquiry_type: formData.inquiry,
+            message: formData.message,
+          },
+        ]);
+
+      if (error) throw error;
+
+      toast({
+        title: "Inquiry Received",
+        description: "Thank you! We have safely stored your message.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        inquiry: "private-label",
+        message: "",
+      });
+    } catch (error: any) {
+      console.error('Error sending data:', error);
+      toast({
+        title: "Error Sending Message",
+        description: error.message || error.error_description || "Could not connect to the database. Please check your internet or settings.",
+        variant: "destructive",
+      });
+    }
   };
 
   const contactInfo = [
     {
       icon: Mail,
       title: "Email Us",
-      value: "export@aurexartisan.com",
+      value: "ujjwalgujral8@gmail.com",
     },
     {
       icon: Phone,
       title: "Call Us",
-      value: "+91 98765 43210",
+      value: "+91 8224940822",
     },
     {
       icon: MapPin,
       title: "Workshop",
-      value: "Rajasthan, India",
+      value: "Madhya Pradesh Jabalpur, India",
     },
   ];
 
@@ -67,7 +93,7 @@ const ContactSection = () => {
               <span className="text-gold">Something Extraordinary</span>
             </h2>
             <p className="text-body mb-10 max-w-md">
-              Whether you're an interior designer, luxury retailer, or brand seeking 
+              Whether you're an interior designer, luxury retailer, or brand seeking
               private-label partnerships, we'd love to hear from you.
             </p>
 
