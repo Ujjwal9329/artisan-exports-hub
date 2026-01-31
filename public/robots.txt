@@ -1,4 +1,9 @@
+# Allow all search engines to crawl the site
 User-agent: *
 Allow: /
 
-Sitemap: https://aurexartisan.com/sitemap.xml
+# Disallow crawling of build artifacts and source maps
+Disallow: /*.map$
+
+# Sitemap location
+Sitemap: https://www.aurexartisan.com/sitemap.xml
