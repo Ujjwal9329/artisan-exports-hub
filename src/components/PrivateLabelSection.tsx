@@ -84,13 +84,13 @@ const PrivateLabelSection = () => {
         >
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <a
-              href="#contact"
+              href="/contact"
               className="px-8 py-4 bg-primary text-primary-foreground font-medium tracking-wide hover:bg-gold-dark transition-all duration-300"
             >
               Start Your Private Label
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="px-8 py-4 border border-champagne/30 text-champagne font-medium tracking-wide hover:border-gold hover:text-gold transition-all duration-300"
             >
               Request Pricing

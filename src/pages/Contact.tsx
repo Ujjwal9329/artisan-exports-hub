@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
 
@@ -9,6 +10,11 @@ const Contact = () => {
         <div className="min-h-screen bg-background overflow-x-hidden">
             <Header />
             <main>
+                <Seo
+                    title="Contact Us"
+                    description="Get in touch with Aurex Artisan. Inquire about wholesale, private label, or custom orders."
+                    canonical="https://aurexartisan.com/contact"
+                />
                 <PageHero
                     title="Contact Us"
                     subtitle="Get In Touch"
