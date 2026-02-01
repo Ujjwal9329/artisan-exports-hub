@@ -14,7 +14,7 @@ const CraftsmanshipSection = () => {
     },
     {
       title: "Premium Materials",
-      description: "Hand-selected marble and natural stone from quarries across India",
+      description: "Hand-selected marble and natural stone, including the pristine white marble of Bhedaghat",
     },
     {
       title: "Meticulous Process",
@@ -41,10 +41,10 @@ const CraftsmanshipSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent" />
             </div>
-            
+
             {/* Decorative Frame */}
             <div className="absolute -bottom-4 -right-4 w-full h-full border border-gold/30 -z-10" />
-            
+
             {/* Stats Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -70,11 +70,11 @@ const CraftsmanshipSection = () => {
               <br />
               <span className="text-gold">Modern Luxury</span>
             </h2>
-            
+
             <p className="text-body mb-8 max-w-lg">
-              Each AUREX ARTISAN piece tells a story of tradition, dedication, and 
-              excellence. Our master craftsmen transform raw marble and stone into 
-              extraordinary works of art, using techniques passed down through generations.
+              Rooted in the renowned marble artistry of Bhedaghat, Jabalpur, each AUREX ARTISAN
+              piece tells a story of tradition. Our master craftsmen transform globally acclaimed
+              Indian stone into extraordinary works of art, preserving the legacy of Jabalpur Stone Craft.
             </p>
 
             <div className="space-y-6">

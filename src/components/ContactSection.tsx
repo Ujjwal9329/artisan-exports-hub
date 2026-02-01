@@ -62,12 +62,14 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email Us",
-      value: "ujjwalgujral8@gmail.com",
+      value: "aurexartisan@gmail.com",
+      link: "mailto:aurexartisan@gmail.com",
     },
     {
       icon: Phone,
       title: "Call Us",
       value: "+91 8224940822",
+      link: "tel:+918224940822",
     },
     {
       icon: MapPin,
@@ -107,7 +109,18 @@ const ContactSection = () => {
                     <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
                       {item.title}
                     </div>
-                    <div className="font-medium text-foreground">{item.value}</div>
+                    <div className="font-medium text-foreground">
+                      {item.link ? (
+                        <a
+                          href={item.link}
+                          className="hover:text-gold transition-colors duration-300"
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        item.value
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}

@@ -17,11 +17,12 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: "Collections", href: "/#collections", isExternal: true },
+    { name: "Home", href: "/", isExternal: false },
+    { name: "Collections", href: "/collections", isExternal: false },
     { name: "Our Story", href: "/story", isExternal: false },
-    { name: "Private Label", href: "/#private-label", isExternal: true },
-    { name: "Global Trade", href: "/#global", isExternal: true },
-    { name: "Contact", href: "/#contact", isExternal: true },
+    { name: "Private Label", href: "/private-label", isExternal: false },
+    { name: "Global Trade", href: "/global-trade", isExternal: false },
+    { name: "Contact", href: "/contact", isExternal: false },
   ];
 
   // Check if we're on the story page to determine header text color
@@ -32,19 +33,17 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border/50"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border/50"
+        : "bg-transparent"
+        }`}
     >
       <div className="container-luxury px-6 md:px-12 lg:px-20">
         <nav className="flex items-center justify-between py-4 md:py-6">
           {/* Logo */}
           <Link to="/" className="flex flex-col">
-            <span className={`font-heading text-xl md:text-2xl font-semibold tracking-wide transition-colors ${
-              isScrolled ? "text-foreground" : (isOnDarkPage ? "text-ivory" : "text-foreground")
-            }`}>
+            <span className={`font-heading text-xl md:text-2xl font-semibold tracking-wide transition-colors ${isScrolled ? "text-foreground" : (isOnDarkPage ? "text-ivory" : "text-foreground")
+              }`}>
               AUREX ARTISAN
             </span>
             <span className="text-[10px] tracking-[0.3em] text-gold font-medium">
@@ -59,9 +58,8 @@ const Header = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`text-sm font-medium hover:text-gold transition-colors duration-300 tracking-wide ${
-                    isScrolled ? "text-muted-foreground" : (isOnDarkPage ? "text-champagne/80" : "text-muted-foreground")
-                  }`}
+                  className={`text-sm font-medium hover:text-gold transition-colors duration-300 tracking-wide ${isScrolled ? "text-muted-foreground" : (isOnDarkPage ? "text-champagne/80" : "text-muted-foreground")
+                    }`}
                 >
                   {link.name}
                 </a>
@@ -69,9 +67,8 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`text-sm font-medium hover:text-gold transition-colors duration-300 tracking-wide ${
-                    isScrolled ? "text-muted-foreground" : (isOnDarkPage ? "text-champagne/80" : "text-muted-foreground")
-                  } ${location.pathname === link.href ? "text-gold" : ""}`}
+                  className={`text-sm font-medium hover:text-gold transition-colors duration-300 tracking-wide ${isScrolled ? "text-muted-foreground" : (isOnDarkPage ? "text-champagne/80" : "text-muted-foreground")
+                    } ${location.pathname === link.href ? "text-gold" : ""}`}
                 >
                   {link.name}
                 </Link>
@@ -81,20 +78,19 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <a
-              href="/#contact"
+            <Link
+              to="/contact"
               className="px-6 py-2.5 bg-primary text-primary-foreground text-sm font-medium tracking-wide hover:bg-gold-dark transition-colors duration-300"
             >
               Inquire Now
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden p-2 transition-colors ${
-              isScrolled ? "text-foreground" : (isOnDarkPage ? "text-ivory" : "text-foreground")
-            }`}
+            className={`lg:hidden p-2 transition-colors ${isScrolled ? "text-foreground" : (isOnDarkPage ? "text-ivory" : "text-foreground")
+              }`}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -126,21 +122,20 @@ const Header = () => {
                     key={link.name}
                     to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-base font-medium hover:text-gold transition-colors py-2 ${
-                      location.pathname === link.href ? "text-gold" : "text-muted-foreground"
-                    }`}
+                    className={`text-base font-medium hover:text-gold transition-colors py-2 ${location.pathname === link.href ? "text-gold" : "text-muted-foreground"
+                      }`}
                   >
                     {link.name}
                   </Link>
                 )
               ))}
-              <a
-                href="/#contact"
+              <Link
+                to="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="mt-4 px-6 py-3 bg-primary text-primary-foreground text-sm font-medium tracking-wide text-center"
               >
                 Inquire Now
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

@@ -38,7 +38,7 @@ const GlobalTradeSection = () => {
   ];
 
   return (
-    <section id="global" className="section-padding bg-gradient-luxury" ref={ref}>
+    <section id="global-trade" className="section-padding bg-gradient-luxury" ref={ref}>
       <div className="container-luxury">
         {/* Header */}
         <motion.div
@@ -52,7 +52,7 @@ const GlobalTradeSection = () => {
             B2B Export <span className="text-gold">Solutions</span>
           </h2>
           <p className="text-body max-w-2xl mx-auto">
-            From our workshops in India to luxury markets worldwide. Trusted by leading 
+            From our workshops in India to luxury markets worldwide. Trusted by leading
             retailers, designers, and hospitality brands across continents.
           </p>
         </motion.div>

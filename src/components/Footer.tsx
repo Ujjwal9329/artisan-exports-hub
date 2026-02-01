@@ -18,7 +18,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-champagne/70 text-sm leading-relaxed max-w-sm">
-              Premium marble and stone artistry, handcrafted in India for luxury brands 
+              Premium marble and stone artistry, handcrafted in India for luxury brands
               and discerning collectors worldwide.
             </p>
           </div>
@@ -47,14 +47,19 @@ const Footer = () => {
             <h4 className="text-ivory font-medium mb-4">Services</h4>
             <ul className="space-y-2">
               {[
-                "White Label",
-                "Custom Design",
-                "Bulk Orders",
-                "Corporate Gifting",
-                "Hospitality Projects",
+                { name: "White Label", link: "#private-label" },
+                { name: "Custom Design", link: "#private-label" },
+                { name: "Bulk Orders", link: "#global-trade" },
+                { name: "Corporate Gifting", link: "#global-trade" },
+                { name: "Hospitality Projects", link: "#global-trade" },
               ].map((service) => (
-                <li key={service}>
-                  <span className="text-champagne/60 text-sm">{service}</span>
+                <li key={service.name}>
+                  <a
+                    href={service.link}
+                    className="text-champagne/60 text-sm hover:text-gold transition-colors inline-block"
+                  >
+                    {service.name}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -74,7 +79,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };
 
