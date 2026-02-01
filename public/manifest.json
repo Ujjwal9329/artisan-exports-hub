@@ -1,0 +1,25 @@
+{
+    "name": "AUREX ARTISAN - Premium Handcrafted Marble & Stone Decor",
+    "short_name": "AUREX ARTISAN",
+    "description": "Discover timeless handcrafted marble vases, stone lamps, and sculptures. Your premier partner for luxury private label decor manufacturing.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#1a1a1a",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "business",
+        "lifestyle",
+        "shopping"
+    ],
+    "lang": "en-US",
+    "dir": "ltr"
+}
