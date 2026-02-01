@@ -14,10 +14,6 @@ const Index = () => {
       <main>
         <HeroSection />
         <CraftsmanshipSection />
-        <CollectionsSection />
-        <PrivateLabelSection />
-        <GlobalTradeSection />
-        <ContactSection />
       </main>
       <Footer />
     </div>

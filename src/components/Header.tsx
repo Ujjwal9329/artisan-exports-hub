@@ -25,8 +25,8 @@ const Header = () => {
     { name: "Contact", href: "/contact", isExternal: false },
   ];
 
-  // Check if we're on the story page to determine header text color
-  const isOnDarkPage = location.pathname === "/story";
+  // Always use dark page style (white text) initially
+  const isOnDarkPage = true;
 
   return (
     <motion.header
@@ -76,15 +76,7 @@ const Header = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Link
-              to="/contact"
-              className="px-6 py-2.5 bg-primary text-primary-foreground text-sm font-medium tracking-wide hover:bg-gold-dark transition-colors duration-300"
-            >
-              Inquire Now
-            </Link>
-          </div>
+
 
           {/* Mobile Menu Toggle */}
           <button
@@ -129,13 +121,7 @@ const Header = () => {
                   </Link>
                 )
               ))}
-              <Link
-                to="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-4 px-6 py-3 bg-primary text-primary-foreground text-sm font-medium tracking-wide text-center"
-              >
-                Inquire Now
-              </Link>
+
             </div>
           </motion.div>
         )}
