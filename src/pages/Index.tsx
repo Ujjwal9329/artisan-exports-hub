@@ -14,6 +14,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <CraftsmanshipSection />
+        <ContactSection/>
       </main>
       <Footer />
     </div>
