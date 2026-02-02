@@ -19,4 +19,36 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Collections Page -->
+  <url>
+    <loc>https://www.aurexartisan.com/collections</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Private Label Page -->
+  <url>
+    <loc>https://www.aurexartisan.com/private-label</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Global Trade Page -->
+  <url>
+    <loc>https://www.aurexartisan.com/global-trade</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.aurexartisan.com/contact</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

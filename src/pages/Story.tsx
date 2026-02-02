@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 // Images
 import bhedaghatImage from "@/assets/bhedaghat-marble-cliffs.jpg";
@@ -56,27 +57,13 @@ const StoryHero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg md:text-xl text-champagne/90 max-w-3xl mx-auto leading-relaxed"
         >
-          From the ancient marble cliffs of Bhedaghat to the world's most distinguished 
-          interiors, discover the thousand-year legacy of Jabalpur stone craft—where 
-          every chisel strike carries the wisdom of generations and every curve 
+          From the ancient marble cliffs of Bhedaghat to the world's most distinguished
+          interiors, discover the thousand-year legacy of Jabalpur stone craft—where
+          every chisel strike carries the wisdom of generations and every curve
           whispers stories of devotion, nature, and the eternal human spirit.
         </motion.p>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-champagne/40 rounded-full flex items-start justify-center pt-2"
-          >
-            <div className="w-1.5 h-3 bg-gold rounded-full" />
-          </motion.div>
-        </motion.div>
+
       </div>
     </section>
   );
@@ -96,36 +83,36 @@ const IntroductionSection = () => {
           className="max-w-4xl mx-auto text-center"
         >
           <span className="text-eyebrow mb-6 block">The Art of Storytelling in Stone</span>
-          
+
           <h2 className="heading-section text-foreground mb-8">
             A Living Legacy from the Heart of <span className="text-gold">India</span>
           </h2>
 
           <div className="space-y-6 text-body">
             <p>
-              In the verdant heartland of Madhya Pradesh, where the sacred Narmada River 
-              carves through towering marble cliffs, an extraordinary tradition has flourished 
-              for over a millennium. <strong className="text-foreground">Jabalpur Stone Craft</strong> is 
-              not merely an art form—it is a profound dialogue between the human hand and 
-              the living earth, a conversation that transforms raw marble into vessels of 
+              In the verdant heartland of Madhya Pradesh, where the sacred Narmada River
+              carves through towering marble cliffs, an extraordinary tradition has flourished
+              for over a millennium. <strong className="text-foreground">Jabalpur Stone Craft</strong> is
+              not merely an art form—it is a profound dialogue between the human hand and
+              the living earth, a conversation that transforms raw marble into vessels of
               meaning, beauty, and cultural memory.
             </p>
 
             <p>
-              Here, in workshops that have witnessed the passage of dynasties and the rise 
-              of nations, master artisans practice an ancient alchemy. They read the veins 
-              of marble like sacred texts, understanding which stones will yield to the 
-              chisel with grace and which demand a gentler approach. Every sculpture that 
-              emerges from their hands carries within it the accumulated wisdom of 
+              Here, in workshops that have witnessed the passage of dynasties and the rise
+              of nations, master artisans practice an ancient alchemy. They read the veins
+              of marble like sacred texts, understanding which stones will yield to the
+              chisel with grace and which demand a gentler approach. Every sculpture that
+              emerges from their hands carries within it the accumulated wisdom of
               forty generations.
             </p>
 
             <p>
-              The motifs that adorn these creations are not decorative choices but a 
-              visual language—lotus blooms speaking of spiritual awakening, elephants 
-              embodying wisdom and prosperity, geometric mandalas mapping the infinite 
-              patterns of the cosmos. Each symbol connects the present moment to an 
-              unbroken lineage of artistic expression that predates even the temples 
+              The motifs that adorn these creations are not decorative choices but a
+              visual language—lotus blooms speaking of spiritual awakening, elephants
+              embodying wisdom and prosperity, geometric mandalas mapping the infinite
+              patterns of the cosmos. Each symbol connects the present moment to an
+              unbroken lineage of artistic expression that predates even the temples
               of Khajuraho.
             </p>
           </div>
@@ -166,7 +153,7 @@ const HistoricalOrigins = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent" />
             </div>
             <div className="absolute -bottom-4 -right-4 w-full h-full border border-gold/20 -z-10" />
-            
+
             {/* Era Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -194,35 +181,35 @@ const HistoricalOrigins = () => {
 
             <div className="space-y-5 text-body">
               <p>
-                The story begins in the <strong className="text-foreground">Kalachuri era</strong>, 
-                when the region that is now Jabalpur flourished under enlightened rulers who 
-                understood art as a pathway to the divine. During the 10th and 11th centuries, 
-                these patrons commissioned the construction of magnificent temples that would 
+                The story begins in the <strong className="text-foreground">Kalachuri era</strong>,
+                when the region that is now Jabalpur flourished under enlightened rulers who
+                understood art as a pathway to the divine. During the 10th and 11th centuries,
+                these patrons commissioned the construction of magnificent temples that would
                 become universities of stone craft.
               </p>
 
               <p>
-                The <strong className="text-foreground">Chousath Yogini Temple</strong> at Bhedaghat 
-                stands as perhaps the most significant of these sacred schools. Built in a 
-                circular design unknown elsewhere in India, this temple features 64 intricately 
-                carved shrines to the yogini goddesses. The artisans who created these figures 
-                developed techniques that would define the aesthetic vocabulary of the region 
+                The <strong className="text-foreground">Chousath Yogini Temple</strong> at Bhedaghat
+                stands as perhaps the most significant of these sacred schools. Built in a
+                circular design unknown elsewhere in India, this temple features 64 intricately
+                carved shrines to the yogini goddesses. The artisans who created these figures
+                developed techniques that would define the aesthetic vocabulary of the region
                 for centuries to come.
               </p>
 
               <p>
-                As the centuries progressed, the craft evolved beyond temple architecture. 
-                During the Mughal period, stone carvers incorporated Persian influences into 
-                their repertoire—arabesques and geometric patterns that added new dimensions 
-                to their artistic language. By the British colonial era, Jabalpur marble had 
-                found admirers across continents, with pieces gracing the collections of 
+                As the centuries progressed, the craft evolved beyond temple architecture.
+                During the Mughal period, stone carvers incorporated Persian influences into
+                their repertoire—arabesques and geometric patterns that added new dimensions
+                to their artistic language. By the British colonial era, Jabalpur marble had
+                found admirers across continents, with pieces gracing the collections of
                 European nobility and American industrialists alike.
               </p>
 
               <p>
-                Today, this millennium-old tradition continues to evolve, with contemporary 
-                artisans creating pieces that honor ancestral techniques while speaking to 
-                modern sensibilities—functional art that transforms living spaces into 
+                Today, this millennium-old tradition continues to evolve, with contemporary
+                artisans creating pieces that honor ancestral techniques while speaking to
+                modern sensibilities—functional art that transforms living spaces into
                 sanctuaries of beauty.
               </p>
             </div>
@@ -263,36 +250,36 @@ const BhedaghatSection = () => {
             className="lg:col-span-3 space-y-6"
           >
             <p className="text-champagne/90 text-lg leading-relaxed">
-              Twenty-five kilometers from Jabalpur, the sacred Narmada River flows through 
-              a canyon of pure white marble—cliffs that rise a hundred feet above the 
-              turquoise waters, their surfaces weathered into fantastic shapes that seem 
-              carved by divine hands. This is <strong className="text-ivory">Bhedaghat</strong>, 
+              Twenty-five kilometers from Jabalpur, the sacred Narmada River flows through
+              a canyon of pure white marble—cliffs that rise a hundred feet above the
+              turquoise waters, their surfaces weathered into fantastic shapes that seem
+              carved by divine hands. This is <strong className="text-ivory">Bhedaghat</strong>,
               the geographical and spiritual heart of India's marble tradition.
             </p>
 
             <p className="text-champagne/80 leading-relaxed">
-              The marble of Bhedaghat possesses a quality found nowhere else on Earth. 
-              Geologically young by marble standards, it retains a softness that allows 
-              artisans to achieve a level of detail impossible with harder stones. Yet once 
-              carved and polished, it develops a luminous surface that seems to glow from 
-              within—as if the stone remembers the moonlight that pilgrims have witnessed 
+              The marble of Bhedaghat possesses a quality found nowhere else on Earth.
+              Geologically young by marble standards, it retains a softness that allows
+              artisans to achieve a level of detail impossible with harder stones. Yet once
+              carved and polished, it develops a luminous surface that seems to glow from
+              within—as if the stone remembers the moonlight that pilgrims have witnessed
               reflecting off these cliffs for millennia.
             </p>
 
             <p className="text-champagne/80 leading-relaxed">
-              The international art world first formally recognized this treasure at the 
-              <strong className="text-ivory"> Paris Exhibition of 1865</strong>, where Jabalpur 
-              marble sculptures astonished European critics accustomed to Italian Carrara. 
-              They noted the Indian stone's unusual warmth, its capacity to hold the most 
-              delicate details, and the way finished pieces seemed to emanate light. Orders 
-              began arriving from Paris, London, and New York—the beginning of a global 
+              The international art world first formally recognized this treasure at the
+              <strong className="text-ivory"> Paris Exhibition of 1865</strong>, where Jabalpur
+              marble sculptures astonished European critics accustomed to Italian Carrara.
+              They noted the Indian stone's unusual warmth, its capacity to hold the most
+              delicate details, and the way finished pieces seemed to emanate light. Orders
+              began arriving from Paris, London, and New York—the beginning of a global
               appreciation that continues to this day.
             </p>
 
             {/* Quote Block */}
             <blockquote className="border-l-2 border-gold pl-6 py-4 my-8">
               <p className="text-xl font-heading italic text-ivory/90">
-                "The marble of the Narmada cliffs possesses a quality of luminescence that 
+                "The marble of the Narmada cliffs possesses a quality of luminescence that
                 defies explanation—as though the stone itself harbors an inner light."
               </p>
               <cite className="text-sm text-gold-light mt-3 block not-italic">
@@ -376,19 +363,19 @@ const ArtisanInspiration = () => {
 
             <div className="space-y-5 text-body mb-10">
               <p>
-                The artisans of Jabalpur do not merely execute designs—they channel a living 
-                tradition that draws from the deepest wells of Indian civilization. Their 
-                inspiration flows from four interconnected streams: the natural world that 
-                surrounds them, the mythological universe inherited from their ancestors, 
-                the rhythms of daily life in their communities, and the sacred symbolism 
+                The artisans of Jabalpur do not merely execute designs—they channel a living
+                tradition that draws from the deepest wells of Indian civilization. Their
+                inspiration flows from four interconnected streams: the natural world that
+                surrounds them, the mythological universe inherited from their ancestors,
+                the rhythms of daily life in their communities, and the sacred symbolism
                 embedded in Hindu, Buddhist, and Jain traditions.
               </p>
 
               <p>
-                Watch a master carver at work, and you will see moments of complete stillness 
-                when the artisan seems to listen to the stone itself. Many speak of this as 
-                a form of meditation, a dialogue with the material that reveals what form 
-                wishes to emerge. This intuitive connection, developed over decades of 
+                Watch a master carver at work, and you will see moments of complete stillness
+                when the artisan seems to listen to the stone itself. Many speak of this as
+                a form of meditation, a dialogue with the material that reveals what form
+                wishes to emerge. This intuitive connection, developed over decades of
                 practice, distinguishes true masters from mere technicians.
               </p>
             </div>
@@ -469,19 +456,19 @@ const RecognitionSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="p-8 bg-background border border-border text-left"
+              className="p-8 bg-background border border-border text-left hover:-translate-y-2 hover:shadow-luxury hover:border-gold/50 transition-all duration-300 cursor-pointer group"
             >
-              <div className="w-16 h-16 flex items-center justify-center bg-gold/10 mb-6">
+              <div className="w-16 h-16 flex items-center justify-center bg-gold/10 mb-6 group-hover:bg-gold/20 transition-colors">
                 <span className="text-3xl">🏷️</span>
               </div>
-              <h3 className="font-heading text-2xl font-medium text-foreground mb-4">
+              <h3 className="font-heading text-2xl font-medium text-foreground mb-4 group-hover:text-gold transition-colors">
                 Geographical Indication Tag
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Jabalpur Stone Craft has been awarded the prestigious 
-                <strong className="text-foreground"> Geographical Indication (GI) Tag</strong> by 
-                the Government of India. This certification authenticates the origin and 
-                traditional production methods, protecting the craft from imitation and 
+                Jabalpur Stone Craft has been awarded the prestigious
+                <strong className="text-foreground"> Geographical Indication (GI) Tag</strong> by
+                the Government of India. This certification authenticates the origin and
+                traditional production methods, protecting the craft from imitation and
                 ensuring that every piece genuinely originates from this historic region.
               </p>
             </motion.div>
@@ -491,27 +478,27 @@ const RecognitionSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="p-8 bg-background border border-border text-left"
+              className="p-8 bg-background border border-border text-left hover:-translate-y-2 hover:shadow-luxury hover:border-gold/50 transition-all duration-300 cursor-pointer group"
             >
-              <div className="w-16 h-16 flex items-center justify-center bg-gold/10 mb-6">
+              <div className="w-16 h-16 flex items-center justify-center bg-gold/10 mb-6 group-hover:bg-gold/20 transition-colors">
                 <span className="text-3xl">🌍</span>
               </div>
-              <h3 className="font-heading text-2xl font-medium text-foreground mb-4">
+              <h3 className="font-heading text-2xl font-medium text-foreground mb-4 group-hover:text-gold transition-colors">
                 UNESCO Cultural Recognition
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                The tradition has been nominated for recognition under 
-                <strong className="text-foreground"> UNESCO's Intangible Cultural Heritage</strong> list, 
-                acknowledging its significance to humanity's artistic legacy. This nomination 
-                places Jabalpur stone craft alongside the world's most treasured cultural 
+                The tradition has been nominated for recognition under
+                <strong className="text-foreground"> UNESCO's Intangible Cultural Heritage</strong> list,
+                acknowledging its significance to humanity's artistic legacy. This nomination
+                places Jabalpur stone craft alongside the world's most treasured cultural
                 traditions, from Japanese woodworking to Italian glassmaking.
               </p>
             </motion.div>
           </div>
 
           <p className="text-body max-w-2xl mx-auto">
-            These recognitions affirm what collectors and connoisseurs have long understood: 
-            Jabalpur stone craft represents not merely Indian artistry, but a contribution 
+            These recognitions affirm what collectors and connoisseurs have long understood:
+            Jabalpur stone craft represents not merely Indian artistry, but a contribution
             to global cultural heritage that deserves protection, celebration, and continuation.
           </p>
         </motion.div>
@@ -571,38 +558,38 @@ const HumanStories = () => {
 
             <div className="space-y-5 text-champagne/85 leading-relaxed">
               <p>
-                Behind every sculpture stands a human story—of children who first held a chisel 
-                at their grandfather's knee, of women who prepare the fine polishing compounds 
-                according to recipes unchanged for centuries, of families who have shaped stone 
+                Behind every sculpture stands a human story—of children who first held a chisel
+                at their grandfather's knee, of women who prepare the fine polishing compounds
+                according to recipes unchanged for centuries, of families who have shaped stone
                 through wars and famines and festivals, through drought years and years of plenty.
               </p>
 
               <p>
-                The training of a master stone carver is a journey of decades. A young apprentice 
-                begins with the simplest tasks—grinding tools, preparing surfaces, observing the 
-                masters at work. Gradually, over years, they are trusted with simple cuts, then 
-                more complex ones, until finally they develop the intuition that distinguishes 
+                The training of a master stone carver is a journey of decades. A young apprentice
+                begins with the simplest tasks—grinding tools, preparing surfaces, observing the
+                masters at work. Gradually, over years, they are trusted with simple cuts, then
+                more complex ones, until finally they develop the intuition that distinguishes
                 craft from artistry.
               </p>
 
               <p>
-                The tools themselves carry meaning. Many artisans work with chisels passed down 
-                through three or four generations, the wooden handles worn smooth by ancestral 
-                hands, the metal reforged and resharpened countless times but never replaced. 
+                The tools themselves carry meaning. Many artisans work with chisels passed down
+                through three or four generations, the wooden handles worn smooth by ancestral
+                hands, the metal reforged and resharpened countless times but never replaced.
                 To work with such a tool is to work in communion with those who came before.
               </p>
 
               <p>
-                Today, these artisans navigate the delicate balance between preservation and 
-                evolution. They honor the techniques of their ancestors while adapting designs 
-                to contemporary sensibilities. A traditional elephant motif might now grace a 
-                minimalist vase destined for a Manhattan penthouse; a sacred lotus pattern 
+                Today, these artisans navigate the delicate balance between preservation and
+                evolution. They honor the techniques of their ancestors while adapting designs
+                to contemporary sensibilities. A traditional elephant motif might now grace a
+                minimalist vase destined for a Manhattan penthouse; a sacred lotus pattern
                 adorns a table lamp designed for a Dubai hotel suite.
               </p>
 
               <p className="text-ivory font-medium">
-                In their workshops, tradition and modernity exist not in tension but in 
-                harmony—each informing and enriching the other, creating pieces that speak 
+                In their workshops, tradition and modernity exist not in tension but in
+                harmony—each informing and enriching the other, creating pieces that speak
                 to the present while carrying the weight and wisdom of a thousand years.
               </p>
             </div>
@@ -633,26 +620,26 @@ const BrandConnection = () => {
 
           <div className="space-y-6 text-body text-left md:text-center mb-12">
             <p>
-              At <strong className="text-foreground">AUREX ARTISAN</strong>, we understand that 
-              when you acquire one of our pieces, you are not simply decorating a space—you 
-              are becoming a custodian of living heritage. Every marble vase, every carved 
-              elephant, every stone lamp that leaves our workshops carries within it the 
+              At <strong className="text-foreground">AUREX ARTISAN</strong>, we understand that
+              when you acquire one of our pieces, you are not simply decorating a space—you
+              are becoming a custodian of living heritage. Every marble vase, every carved
+              elephant, every stone lamp that leaves our workshops carries within it the
               accumulated artistry of forty generations.
             </p>
 
             <p>
-              Our commitment to the artisans of Jabalpur goes beyond commerce. We work directly 
-              with family workshops, ensuring fair compensation that honors both the skill and 
-              the time invested in each creation. We support apprenticeship programs that 
-              transmit ancient knowledge to new generations. We document traditional techniques 
+              Our commitment to the artisans of Jabalpur goes beyond commerce. We work directly
+              with family workshops, ensuring fair compensation that honors both the skill and
+              the time invested in each creation. We support apprenticeship programs that
+              transmit ancient knowledge to new generations. We document traditional techniques
               to ensure they are never lost.
             </p>
 
             <p>
-              When you choose AUREX ARTISAN, you choose to participate in the continuation of 
-              one of humanity's great artistic traditions. You choose to support families who 
-              have dedicated their lives to the pursuit of beauty. You choose to bring into 
-              your space a piece that connects you to the sacred waters of the Narmada, to 
+              When you choose AUREX ARTISAN, you choose to participate in the continuation of
+              one of humanity's great artistic traditions. You choose to support families who
+              have dedicated their lives to the pursuit of beauty. You choose to bring into
+              your space a piece that connects you to the sacred waters of the Narmada, to
               the moonlit cliffs of Bhedaghat, to a millennium of human creativity and devotion.
             </p>
           </div>
@@ -687,20 +674,20 @@ const BrandConnection = () => {
             className="p-8 md:p-12 bg-muted border border-border"
           >
             <p className="text-lg md:text-xl font-heading italic text-foreground mb-6">
-              "In acquiring a piece of Jabalpur stone craft, you do not merely purchase 
-              an object. You enter into relationship with a tradition, with the hands 
-              that shaped the stone, with the earth from which it came, and with all 
+              "In acquiring a piece of Jabalpur stone craft, you do not merely purchase
+              an object. You enter into relationship with a tradition, with the hands
+              that shaped the stone, with the earth from which it came, and with all
               those who will encounter its beauty in the centuries to come."
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
               <a
-                href="/#collections"
+                href="/collections"
                 className="px-8 py-4 bg-primary text-primary-foreground font-medium tracking-wide hover:bg-gold-dark transition-all duration-300"
               >
                 Explore Collections
               </a>
               <a
-                href="/#contact"
+                href="/contact"
                 className="px-8 py-4 border border-border text-foreground font-medium tracking-wide hover:border-gold hover:text-gold transition-all duration-300"
               >
                 Begin Your Journey
@@ -722,6 +709,11 @@ const Story = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Header />
       <main>
+        <Seo
+          title="Our Story"
+          description="Discover the thousand-year legacy of Jabalpur stone craft. A journey from ancient marble cliffs to modern luxury interiors."
+          canonical="https://aurexartisan.com/story"
+        />
         <StoryHero />
         <IntroductionSection />
         <HistoricalOrigins />

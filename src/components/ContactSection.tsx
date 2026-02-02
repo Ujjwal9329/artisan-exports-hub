@@ -14,12 +14,47 @@ const ContactSection = () => {
     name: "",
     email: "",
     company: "",
-    inquiry: "private-label",
+    inquiry: "",
     message: "",
   });
 
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    } else if (formData.name.length < 2) {
+      newErrors.name = "Name must be at least 2 characters";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address (e.g., name@example.com)";
+    }
+
+    if (!formData.inquiry) {
+      newErrors.inquiry = "Please select an inquiry type";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    } else if (formData.message.length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
 
     try {
       const { error } = await supabase
@@ -45,16 +80,12 @@ const ContactSection = () => {
         name: "",
         email: "",
         company: "",
-        inquiry: "private-label",
+        inquiry: "",
         message: "",
       });
+      setErrors({});
     } catch (error: any) {
       console.error('Error sending data:', error);
-      toast({
-        title: "Error Sending Message",
-        description: error.message || error.error_description || "Could not connect to the database. Please check your internet or settings.",
-        variant: "destructive",
-      });
     }
   };
 
@@ -137,29 +168,35 @@ const ContactSection = () => {
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Your Name
+                    Your Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    required
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-muted border border-border focus:border-gold focus:outline-none transition-colors"
-                    placeholder="John Smith"
+                    onChange={(e) => {
+                      setFormData({ ...formData, name: e.target.value });
+                      if (errors.name) setErrors({ ...errors, name: "" });
+                    }}
+                    className={`w-full px-4 py-3 bg-muted border ${errors.name ? 'border-red-500' : 'border-border'} focus:border-gold focus:outline-none transition-colors`}
+                    placeholder="Enter your name"
                   />
+                  {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Email Address
+                    Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
-                    required
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-muted border border-border focus:border-gold focus:outline-none transition-colors"
-                    placeholder="john@company.com"
+                    onChange={(e) => {
+                      setFormData({ ...formData, email: e.target.value });
+                      if (errors.email) setErrors({ ...errors, email: "" });
+                    }}
+                    className={`w-full px-4 py-3 bg-muted border ${errors.email ? 'border-red-500' : 'border-border'} focus:border-gold focus:outline-none transition-colors`}
+                    placeholder="Enter your email"
                   />
+                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                 </div>
               </div>
 
@@ -178,32 +215,41 @@ const ContactSection = () => {
 
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
-                  Inquiry Type
+                  Inquiry Type <span className="text-red-500">*</span>
                 </label>
                 <select
                   value={formData.inquiry}
-                  onChange={(e) => setFormData({ ...formData, inquiry: e.target.value })}
-                  className="w-full px-4 py-3 bg-muted border border-border focus:border-gold focus:outline-none transition-colors appearance-none cursor-pointer"
+                  onChange={(e) => {
+                    setFormData({ ...formData, inquiry: e.target.value });
+                    if (errors.inquiry) setErrors({ ...errors, inquiry: "" });
+                  }}
+                  className={`w-full px-4 py-3 bg-muted border ${errors.inquiry ? 'border-red-500' : 'border-border'} focus:border-gold focus:outline-none transition-colors appearance-none cursor-pointer`}
                 >
+                  <option value="">Select Inquiry Type</option>
                   <option value="private-label">Private Label Partnership</option>
                   <option value="wholesale">Wholesale / Bulk Order</option>
                   <option value="custom">Custom Design Request</option>
                   <option value="hospitality">Hospitality Project</option>
                   <option value="other">Other Inquiry</option>
                 </select>
+                {errors.inquiry && <p className="text-red-500 text-xs mt-1">{errors.inquiry}</p>}
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
-                  Message
+                  Message <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   rows={4}
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 bg-muted border border-border focus:border-gold focus:outline-none transition-colors resize-none"
+                  onChange={(e) => {
+                    setFormData({ ...formData, message: e.target.value });
+                    if (errors.message) setErrors({ ...errors, message: "" });
+                  }}
+                  className={`w-full px-4 py-3 bg-muted border ${errors.message ? 'border-red-500' : 'border-border'} focus:border-gold focus:outline-none transition-colors resize-none`}
                   placeholder="Tell us about your project or requirements..."
                 />
+                {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
               </div>
 
               <button

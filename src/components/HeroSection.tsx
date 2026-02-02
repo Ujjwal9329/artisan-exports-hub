@@ -57,13 +57,13 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
           >
             <a
-              href="#collections"
+              href="/collections"
               className="px-8 py-4 bg-primary text-primary-foreground font-medium tracking-wide hover:bg-gold-dark transition-all duration-300 hover:shadow-gold-glow"
             >
               Explore Collections
             </a>
             <a
-              href="#private-label"
+              href="/private-label"
               className="px-8 py-4 border border-champagne/50 text-champagne font-medium tracking-wide hover:bg-champagne/10 hover:border-champagne transition-all duration-300"
             >
               Private Label Services
@@ -79,13 +79,6 @@ const HeroSection = () => {
         transition={{ duration: 1, delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-champagne/50 rounded-full flex items-start justify-center pt-2"
-        >
-          <div className="w-1.5 h-3 bg-gold rounded-full" />
-        </motion.div>
       </motion.div>
     </section>
   );
