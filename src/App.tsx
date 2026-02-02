@@ -11,6 +11,7 @@ import GlobalTrade from "./pages/GlobalTrade";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import ScrollToTop from "@/components/ScrollToTop";
 
 import { HelmetProvider } from 'react-helmet-async';
